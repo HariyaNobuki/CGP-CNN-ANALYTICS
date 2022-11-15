@@ -30,6 +30,12 @@ if __name__ == '__main__':
     os.makedirs(cnf.res_path,exist_ok=True)
     makefiles()
 
+    if cnf.sub_mode == 'analytics':
+        print(crayons.red("Analytics"))
+        cnf.set_ANA()
+        for ana_mode in cnf.analytics_mode:
+            print(crayons("{}".format(ana_mode)))
+
     for trial in range(cnf.num_trial):  
         print(crayons.blue("### Reset seed and trial ", trial ,"###"))
         cnf.torch_fix_seed(trial)
@@ -57,9 +63,6 @@ if __name__ == '__main__':
             # CGP-CNN
             cgp.modified_evolution(max_eval=cnf.max_eval, mutation_rate=cnf.mutation_rate, log_path=cnf.trial_path)
 
-    if cnf.sub_mode == 'analytics':
-        print(crayons.red("Analytics"))
-        cnf.set_ANA()
 
 
     # --- Retraining evolved architecture ---
