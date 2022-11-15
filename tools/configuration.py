@@ -25,6 +25,9 @@ class Configuration:
     def setting(self):
         self.max_eval = 60
         self.mutation_rate = 0.1
+    
+    def set_ANA(self):
+        self.analytics_mode = ["_log_cgp"]
 
     def set_G2V(self):
         self.vector_size= 10

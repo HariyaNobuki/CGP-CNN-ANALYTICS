@@ -59,6 +59,7 @@ if __name__ == '__main__':
 
     if cnf.sub_mode == 'analytics':
         print(crayons.red("Analytics"))
+        cnf.set_ANA()
 
 
     # --- Retraining evolved architecture ---
