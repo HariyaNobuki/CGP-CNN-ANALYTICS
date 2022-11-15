@@ -57,6 +57,10 @@ if __name__ == '__main__':
             # CGP-CNN
             cgp.modified_evolution(max_eval=cnf.max_eval, mutation_rate=cnf.mutation_rate, log_path=cnf.trial_path)
 
+    if cnf.sub_mode == 'analytics':
+        print(crayons.red("Analytics"))
+
+
     # --- Retraining evolved architecture ---
     if cnf.mode == 'retrain':
         print('Retrain')

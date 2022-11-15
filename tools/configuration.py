@@ -19,6 +19,8 @@ class Configuration:
         self.CGP_mode = "evolution"
         self.sur_mode = "RBF"       # ["KRG","RBF"]
         self.EMultiMode = False
+
+        self.sub_mode = "analytics"
     
     def setting(self):
         self.max_eval = 60
