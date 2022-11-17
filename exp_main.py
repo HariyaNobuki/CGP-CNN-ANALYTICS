@@ -34,7 +34,9 @@ if __name__ == '__main__':
         print(crayons.red("Analytics"))
         cnf.set_ANA()
         for ana_mode in cnf.analytics_mode:
-            print(crayons("{}".format(ana_mode)))
+            print(crayons.red("Mode ",bold=True),end="")
+            print(ana_mode)
+
 
     for trial in range(cnf.num_trial):  
         print(crayons.blue("### Reset seed and trial ", trial ,"###"))
