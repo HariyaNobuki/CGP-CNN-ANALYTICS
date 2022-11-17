@@ -33,6 +33,7 @@ if __name__ == '__main__':
     if cnf.sub_mode == 'analytics':
         print(crayons.red("Analytics"))
         cnf.set_ANA()
+        cnf.date_path = cnf.res_path + "/" + cnf.res_date
         for ana_mode in cnf.analytics_mode:
             print(crayons.red("Mode ",bold=True),end="")
             print(ana_mode)
