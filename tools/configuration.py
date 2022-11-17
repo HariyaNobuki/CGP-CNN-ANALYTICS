@@ -27,6 +27,7 @@ class Configuration:
         self.mutation_rate = 0.1
     
     def set_ANA(self):
+        self.res_data = "20221115"
         self.analytics_mode = ["_log_cgp"]
 
     def set_G2V(self):
