@@ -18,6 +18,9 @@ from krg_cgp_cnn.cgp import *
 from krg_cgp_cnn.cgp_config import *
 from krg_cgp_cnn.cnn_train import CNN_train
 
+sys.path.append(os.path.join(os.path.dirname(__file__), 'analytics'))  # 1階層上のfileのimport
+import analytics_main
+
 def makefiles():
     for trial in range(cnf.num_trial):
         os.makedirs(cnf.res_path+"/trial_{}".format(trial),exist_ok=True)
@@ -33,6 +36,7 @@ if __name__ == '__main__':
     if cnf.sub_mode == 'analytics':
         print(crayons.red("Analytics"))
         cnf.set_ANA()
+        ana_main = analytics_main.Analytics()
         cnf.date_path = cnf.res_path + "/" + cnf.res_date
         for ana_mode in cnf.analytics_mode:
             print(crayons.red("Mode ",bold=True),end="")
