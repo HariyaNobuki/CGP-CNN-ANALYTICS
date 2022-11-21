@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 class Analytics:
     def __init__(self):
         print(crayons.red("### ANALYTICS ###"))
-    
+
     def analytics_log_cgp(self,df,save_path):
         print('cgp analytics'.format(crayons.red('red')))
         fig_cgp = plt.figure(figsize=(10,8))

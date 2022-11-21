@@ -40,9 +40,9 @@ if __name__ == '__main__':
         for exp in cnf.exp_mode:
             print(crayons.red("Mode ",bold=True),end="")
             i_path = cnf.date_path + "/" + exp
-            for trial in cnf.num_trial:
+            for trial in range(cnf.num_trial):
                 print('{}'.format(crayons.red('--trial')))
-                df = pd.read_csv(i_path + "/" + str(trial) + "/_log_cgp.csv")
+                df = pd.read_csv(i_path + "/trial_" + str(trial) + "/_log_cgp.csv")
                 ana_main.analytics_log_cgp(df,i_path + "/" + str(trial))
                 a=0
 
