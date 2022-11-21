@@ -48,6 +48,8 @@ if __name__ == '__main__':
                 ana_main.analytics_log_epoch_test(df,i_path + "/trial_" + str(trial))
                 df = pd.read_csv(i_path + "/trial_" + str(trial) + "/_log_local_refinement_best.csv")
                 ana_main.analytics_log_local_refinement_best(df,i_path + "/trial_" + str(trial))
+                df = pd.read_csv(i_path + "/trial_" + str(trial) + "/_log_surrogate.csv")
+                
 
 
     for trial in range(cnf.num_trial):  

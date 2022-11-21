@@ -67,3 +67,6 @@ class Analytics:
             plt.plot(df_epoch["local_i"],df_epoch["f_IC"],lw=1,ms=3, color=cm.Blues(gen/max(df["generation"])))
             #plt.plot(df_epoch["local_i"],df_epoch["f_IC"])
         fig_EI.savefig(save_path+"/_log_local_refinement_best_EI.png")
+    
+    def analytics_log_surrogate(self,df,save_path):
+        print('_log_surrogate analytics'.format(crayons.red('red')))
