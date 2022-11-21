@@ -26,5 +26,5 @@ class Analytics:
 
     def analytics_log_epoch_test(self,df,save_path):
         print('_log_epoch analytics'.format(crayons.red('red')))
+        training_df = df.query('type == "training"')
         fig_epoch = plt.figure(figsize=(10,8))
-        
