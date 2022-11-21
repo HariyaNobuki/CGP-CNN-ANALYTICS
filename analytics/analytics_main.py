@@ -32,3 +32,9 @@ class Analytics:
         e_20 = training_df.query('epoch == 20')
         e_30 = training_df.query('epoch == 30')
         fig_epoch = plt.figure(figsize=(10,8))
+        x_ = [i+1 for i in range(len(e_5))]
+        plt.plot(x_,e_5["test_loss"],lw=0.5,ms=1,label="5epoch")
+        plt.plot(x_,e_10["test_loss"],lw=0.5,ms=1,label="10epoch")
+        plt.plot(x_,e_20["test_loss"],lw=0.5,ms=1,label="20epoch")
+        plt.plot(x_,e_30["test_loss"],lw=0.5,ms=1,label="30epoch")
+        
