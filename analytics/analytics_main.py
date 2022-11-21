@@ -9,8 +9,9 @@ class Analytics:
     def __init__(self):
         print(crayons.red("### ANALYTICS ###"))
     
-    def analytics_log_cgp(self):
+    def analytics_log_cgp(self,df):
         print(crayons.blue("### CGP ###"))
         fig_cgp = plt.figure(figsize=(10,8))
         fig, ax1 = plt.subplots(1,1)
         ax2 = ax1.twinx()
+        #ax1.plot()
