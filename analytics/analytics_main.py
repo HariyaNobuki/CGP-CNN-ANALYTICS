@@ -4,6 +4,7 @@ import os , sys
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.cm as cm
 
 class Analytics:
     def __init__(self):
@@ -53,9 +54,16 @@ class Analytics:
 
     def analytics_log_local_refinement_best(self,df,save_path):
         print('_log_local_refinement_best analytics'.format(crayons.red('red')))
-        fig = plt.figure(figsize=(10,8))
-        for gen in range(df["generation"][-1]):
+        fig_sur = plt.figure(figsize=(10,8))
+        for gen in range(max(df["generation"])):
             df_epoch = df.query('generation == {}'.format(gen))
-            plt.plot(df_epoch["local_i"],df_epoch["f_sur"],lw=1,ms=3,label="f_surrogate")
+            plt.plot(df_epoch["local_i"],df_epoch["f_sur"],lw=1,ms=3, color=cm.Blues(gen/max(df["generation"])))
             #plt.plot(df_epoch["local_i"],df_epoch["f_IC"])
-        fig.savefig(save_path+"/_log_epoch_test_acc.png")
+        fig_sur.savefig(save_path+"/_log_local_refinement_best_sur.png")
+
+        fig_EI = plt.figure(figsize=(10,8))
+        for gen in range(max(df["generation"])):
+            df_epoch = df.query('generation == {}'.format(gen))
+            plt.plot(df_epoch["local_i"],df_epoch["f_IC"],lw=1,ms=3, color=cm.Blues(gen/max(df["generation"])))
+            #plt.plot(df_epoch["local_i"],df_epoch["f_IC"])
+        fig_EI.savefig(save_path+"/_log_local_refinement_best_EI.png")
