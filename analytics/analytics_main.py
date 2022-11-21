@@ -10,7 +10,7 @@ class Analytics:
         print(crayons.red("### ANALYTICS ###"))
     
     def analytics_log_cgp(self,df):
-        print(crayons.blue("### CGP ###"))
+        print('cgp analytics'.format(crayons.red('red')))
         fig_cgp = plt.figure(figsize=(10,8))
         fig, ax1 = plt.subplots(1,1)
         ax2 = ax1.twinx()
