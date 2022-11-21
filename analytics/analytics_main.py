@@ -53,3 +53,6 @@ class Analytics:
 
     def analytics_log_local_refinement_best(self,df,save_path):
         print('_log_local_refinement_best analytics'.format(crayons.red('red')))
+        for gen in range(df["generation"][-1]):
+            df_epoch = df.query('type == "training"')
+        fig = plt.figure(figsize=(10,8))
