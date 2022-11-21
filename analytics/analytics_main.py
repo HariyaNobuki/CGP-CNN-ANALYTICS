@@ -53,6 +53,10 @@ class Analytics:
 
     def analytics_log_local_refinement_best(self,df,save_path):
         print('_log_local_refinement_best analytics'.format(crayons.red('red')))
+        fig = plt.figure(figsize=(10,8))
         for gen in range(df["generation"][-1]):
-            df_epoch = df.query('type == "training"')
+            df_epoch = df.query('generation == {}'.format(gen))
+            plt.plot(df["local_i"],df["f_sur"])
+            plt.plot(df["local_i"],df["f_IC"])
+
         fig = plt.figure(figsize=(10,8))
