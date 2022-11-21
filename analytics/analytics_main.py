@@ -9,7 +9,7 @@ class Analytics:
     def __init__(self):
         print(crayons.red("### ANALYTICS ###"))
     
-    def analytics_log_cgp(self,df):
+    def analytics_log_cgp(self,df,save_path):
         print('cgp analytics'.format(crayons.red('red')))
         fig_cgp = plt.figure(figsize=(10,8))
         fig, ax1 = plt.subplots(1,1)
@@ -22,4 +22,4 @@ class Analytics:
         handler2, label2 = ax2.get_legend_handles_labels()
         ax1.legend(handler1+handler2,label1+label2,borderaxespad=0)
         #ax1.grid(True)
-        fig_cgp.savefig()
+        fig_cgp.savefig(save_path+"/_log_cgp.png")
