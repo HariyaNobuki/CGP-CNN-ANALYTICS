@@ -18,3 +18,8 @@ class Analytics:
         ax1.bar(df["num_eval"],df["size"],color="lightblue",label="size")
         #ax1.set_ylim(0,10)
         #ax2.set_ylim(100,110)
+        handler1, label1 = ax1.get_legend_handles_labels()
+        handler2, label2 = ax2.get_legend_handles_labels()
+        ax1.legend(handler1+handler2,label1+label2,borderaxespad=0)
+        #ax1.grid(True)
+        fig_cgp.savefig()
