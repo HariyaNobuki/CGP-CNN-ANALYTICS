@@ -34,8 +34,8 @@ class Analytics:
         fig_loss = plt.figure(figsize=(10,8))
         x_ = [i+1 for i in range(len(e_5))]
         plt.plot(x_,e_5["test_loss"],lw=0.5,ms=1,label="5epoch")
-        plt.plot(x_,e_10["test_loss"],lw=0.5,ms=1,label="10epoch")
-        plt.plot(x_,e_20["test_loss"],lw=0.5,ms=1,label="20epoch")
+        #plt.plot(x_,e_10["test_loss"],lw=0.5,ms=1,label="10epoch")
+        #plt.plot(x_,e_20["test_loss"],lw=0.5,ms=1,label="20epoch")
         plt.plot(x_,e_30["test_loss"],lw=0.5,ms=1,label="30epoch")
         plt.ylim(0,100)
         plt.legend()
@@ -51,3 +51,5 @@ class Analytics:
         plt.legend()
         fig_acc.savefig(save_path+"/_log_epoch_test_acc.png")
 
+    def analytics_log_local_refinement_best(self,df,save_path):
+        print('_log_local_refinement_best analytics'.format(crayons.red('red')))

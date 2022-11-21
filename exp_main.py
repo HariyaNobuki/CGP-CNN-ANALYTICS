@@ -46,8 +46,8 @@ if __name__ == '__main__':
                 ana_main.analytics_log_cgp(df,i_path + "/trial_" + str(trial))
                 df = pd.read_csv(i_path + "/trial_" + str(trial) + "/_log_epoch_test.csv")
                 ana_main.analytics_log_epoch_test(df,i_path + "/trial_" + str(trial))
-                
-
+                df = pd.read_csv(i_path + "/trial_" + str(trial) + "/_log_local_refinement_best.csv")
+                ana_main.analytics_log_local_refinement_best(df,i_path + "/trial_" + str(trial))
 
 
     for trial in range(cnf.num_trial):  
