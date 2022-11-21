@@ -23,3 +23,8 @@ class Analytics:
         ax1.legend(handler1+handler2,label1+label2,borderaxespad=0)
         #ax1.grid(True)
         fig_cgp.savefig(save_path+"/_log_cgp.png")
+
+    def analytics_log_epoch_test(self,df,save_path):
+        print('_log_epoch analytics'.format(crayons.red('red')))
+        fig_epoch = plt.figure(figsize=(10,8))
+        
