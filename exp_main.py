@@ -37,7 +37,7 @@ if __name__ == '__main__':
         cnf.set_ANA()
         ana_main = analytics_main.Analytics()
         cnf.date_path = cnf.res_path + "/" + cnf.res_date
-        for ana_mode in cnf.analytics_mode:
+        for exp in cnf.exp_mode:
             print(crayons.red("Mode ",bold=True),end="")
             print(ana_mode)
 
