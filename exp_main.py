@@ -43,7 +43,7 @@ if __name__ == '__main__':
             for trial in range(cnf.num_trial):
                 print('{}'.format(crayons.red('--trial')))
                 df = pd.read_csv(i_path + "/trial_" + str(trial) + "/_log_cgp.csv")
-                ana_main.analytics_log_cgp(df,i_path + "/" + str(trial))
+                ana_main.analytics_log_cgp(df,i_path + "/trial_" + str(trial))
                 a=0
 
 
