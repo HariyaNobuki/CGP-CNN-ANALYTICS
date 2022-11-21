@@ -39,7 +39,9 @@ if __name__ == '__main__':
         cnf.date_path = cnf.res_path + "/" + cnf.res_date
         for exp in cnf.exp_mode:
             print(crayons.red("Mode ",bold=True),end="")
-            print(ana_mode)
+            i_path = cnf.date_path + "/" + exp
+            for trial in cnf.num_trial:
+                print('{}'.format(crayons.red('--trial')))
 
 
     for trial in range(cnf.num_trial):  

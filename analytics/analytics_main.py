@@ -6,3 +6,6 @@ import numpy as np
 class Analytics:
     def __init__(self):
         print(crayons.red("### ANALYTICS ###"))
+    
+    def analytics_log_cgp(self):
+        print(crayons.blue("### CGP ###"))
