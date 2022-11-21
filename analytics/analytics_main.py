@@ -14,4 +14,5 @@ class Analytics:
         fig_cgp = plt.figure(figsize=(10,8))
         fig, ax1 = plt.subplots(1,1)
         ax2 = ax1.twinx()
-        #ax1.plot()
+        ax1.plot(df["num_eval"],df["evaluation"],linestyle="solid",color="k",marker="^")
+        ax1.bar(df["num_eval"])
