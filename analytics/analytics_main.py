@@ -56,7 +56,6 @@ class Analytics:
         fig = plt.figure(figsize=(10,8))
         for gen in range(df["generation"][-1]):
             df_epoch = df.query('generation == {}'.format(gen))
-            plt.plot(df["local_i"],df["f_sur"])
-            plt.plot(df["local_i"],df["f_IC"])
-
-        fig = plt.figure(figsize=(10,8))
+            plt.plot(df_epoch["local_i"],df_epoch["f_sur"],lw=1,ms=3,label="f_surrogate")
+            #plt.plot(df_epoch["local_i"],df_epoch["f_IC"])
+        fig.savefig(save_path+"/_log_epoch_test_acc.png")
