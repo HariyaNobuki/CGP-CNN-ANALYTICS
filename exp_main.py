@@ -49,7 +49,7 @@ if __name__ == '__main__':
                 df = pd.read_csv(i_path + "/trial_" + str(trial) + "/_log_local_refinement_best.csv")
                 ana_main.analytics_log_local_refinement_best(df,i_path + "/trial_" + str(trial))
                 df = pd.read_csv(i_path + "/trial_" + str(trial) + "/_log_surrogate.csv")
-                
+                ana_main.analytics_log_surrogate(df,i_path + "/trial_" + str(trial))
 
 
     for trial in range(cnf.num_trial):  

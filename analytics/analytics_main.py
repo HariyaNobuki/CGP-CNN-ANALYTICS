@@ -16,7 +16,7 @@ class Analytics:
         fig_cgp, ax1 = plt.subplots(1,1)
         ax2 = ax1.twinx()
         ax1.plot(df["num_eval"],df["evaluation"],linestyle="solid",lw=0.5,ms=1,color="k",marker="^",label="loss")
-        ax1.bar(df["num_eval"],df["size"],color="lightblue",label="size")
+        ax2.bar(df["num_eval"],df["size"],color="lightblue",label="size")
         ax1.set_ylim(0,20)
         ax2.set_ylim(1e10,1e11)
         handler1, label1 = ax1.get_legend_handles_labels()
@@ -70,3 +70,13 @@ class Analytics:
     
     def analytics_log_surrogate(self,df,save_path):
         print('_log_surrogate analytics'.format(crayons.red('red')))
+        fig_sur = plt.figure(figsize=(10,8))
+        fig_sur, ax1 = plt.subplots(1,1)
+        ax2 = ax1.twinx()
+        ax1.plot(df["generation"],df["kendalltau"],lw=0.5,ms=1,color="r",marker="^",label="kendalltau")
+        ax2.plot(df["generation"],df["rank_dif"],lw=0.5,ms=1,color="b",marker="^",label="rank_dif")
+        handler1, label1 = ax1.get_legend_handles_labels()
+        handler2, label2 = ax2.get_legend_handles_labels()
+        ax1.legend(handler1+handler2,label1+label2,borderaxespad=0)
+        #ax1.grid(True)
+        fig_sur.savefig(save_path+"/_log_surrogate.png")
