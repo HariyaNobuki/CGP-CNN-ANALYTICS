@@ -11,7 +11,7 @@ from   pydacefit.regr   import regr_constant, regr_linear, regr_quadratic
 class Configuration:
     def __init__(self):
         print(crayons.green("### CONFIG Initialization ###"))
-        self.num_trial = 3
+        self.num_trial = 1
         self.main_path = os.getcwd()
         self.gpu_num = 1
         self.res_path = self.main_path+"/result"
