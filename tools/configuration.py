@@ -29,7 +29,7 @@ class Configuration:
     def set_ANA(self):
         self.res_date = "20221115"
         self.analytics_mode = ["_log_cgp"]
-        self.exp_mode = ["RBF"]
+        self.exp_mode = ["RBF","KRG_1"]
 
     def set_G2V(self):
         self.vector_size= 10

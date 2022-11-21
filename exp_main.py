@@ -32,6 +32,7 @@ if __name__ == '__main__':
     makefiles()
 
     if cnf.sub_mode == 'analytics':
+        # single analytics
         print(crayons.red("Analytics"))
         cnf.set_ANA()
         ana_main = analytics_main.Analytics()
