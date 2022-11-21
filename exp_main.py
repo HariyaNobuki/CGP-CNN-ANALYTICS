@@ -2,9 +2,7 @@
 # -*- coding: utf-8 -*-
 # python 3.7 plz
 
-
-
-# blue : go
+# blue : g
 # red  : debugs
 # green : import
 import crayons
