@@ -11,4 +11,6 @@ class Analytics:
     
     def analytics_log_cgp(self):
         print(crayons.blue("### CGP ###"))
-        fig_cgp = plt.figure()
+        fig_cgp = plt.figure(figsize=(10,8))
+        fig, ax1 = plt.subplots(1,1)
+        ax2 = ax1.twinx()
