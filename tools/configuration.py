@@ -11,7 +11,7 @@ from   pydacefit.regr   import regr_constant, regr_linear, regr_quadratic
 class Configuration:
     def __init__(self):
         print(crayons.green("### CONFIG Initialization ###"))
-        self.num_trial = 1
+        self.num_trial = 3
         self.main_path = os.getcwd()
         self.gpu_num = 1
         self.res_path = self.main_path+"/result"
@@ -27,9 +27,9 @@ class Configuration:
         self.mutation_rate = 0.1
     
     def set_ANA(self):
-        self.res_date = "20221115"
+        self.res_date = "20221122"
         self.analytics_mode = ["_log_cgp"]
-        self.exp_mode = ["RBF","KRG_1"]
+        self.exp_mode = ["RBF-F","RBF-T","KRG-d5-F","KRG-d5-T","KRG-d10-F","KRG-d10-T"]
 
     def set_G2V(self):
         self.vector_size= 10
