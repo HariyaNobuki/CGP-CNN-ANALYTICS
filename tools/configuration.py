@@ -31,6 +31,7 @@ class Configuration:
         self.res_date = "20221122"
         self.analytics_mode = ["_log_cgp"]
         self.exp_mode = ["RBF-F","RBF-T","KRG-d5-F","KRG-d5-T","KRG-d10-F","KRG-d10-T"]
+        self.nas_path = os.path.expanduser('~/Desktop/192.168.11.8\Experiment\2023_hariya')
 
     def set_G2V(self):
         self.vector_size= 10

@@ -51,31 +51,3 @@ if __name__ == '__main__':
                 df = pd.read_csv(i_path + "/trial_" + str(trial) + "/_log_surrogate.csv")
                 ana_main.analytics_log_surrogate(df,i_path + "/trial_" + str(trial))
 
-
-    for trial in range(cnf.num_trial):  
-        print(crayons.blue("### Reset seed and trial ", trial ,"###"))
-        cnf.torch_fix_seed(trial)
-        cnf.trial_path = cnf.res_path + "/trial_{}".format(trial)
-        # --- Optimization of the CNN architecture ---
-        if cnf.CGP_mode == 'evolution':
-            # Create CGP configuration and save network information
-            # In CGP Config
-            cnf.set_CGP()
-            network_info = CgpInfoConvSet(rows=cnf.rows, cols=cnf.cols, level_back=cnf.level_back, min_active_num=cnf.min_active_num, max_active_num=cnf.max_active_num)
-            with open(os.path.join(cnf.trial_path, 'network_info.pkl'), mode='wb') as f:
-                pickle.dump(network_info, f)
-            # Evaluation function for CGP (training CNN and return validation accuracy)
-            imgSize = 32
-            cnf.set_CNN()
-            eval_f = CNNEvaluation(cnf,gpu_num=cnf.gpu_num, dataset='cifar10', reduced=cnf.reduced, verbose=True, epoch_num=cnf.epoch_num, 
-                                batchsize=128, imgSize=imgSize)  # In cgp_config
-            # Execute evolution
-            cnf.set_G2V()
-            cgp = CGP(network_info, eval_f, cnf, lam=cnf.lam, imgSize=imgSize, init=cnf.init, bias=cnf.bias,G2V_pop=cnf.G2V_pop)
-            # Graph2Vec
-            cgp.G2V_initialization()
-            # RBF SAEA
-            cgp._evaluation_val()
-            # CGP-CNN
-            cgp.modified_evolution(max_eval=cnf.max_eval, mutation_rate=cnf.mutation_rate, log_path=cnf.trial_path)
-
