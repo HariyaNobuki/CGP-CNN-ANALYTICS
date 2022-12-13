@@ -21,6 +21,7 @@ class Configuration:
         self.EMultiMode = False
 
         self.sub_mode = "analytics"
+
     
     def setting(self):
         self.max_eval = 60
